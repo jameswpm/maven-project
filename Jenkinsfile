@@ -1,8 +1,8 @@
 pipeline {
     /** Declarative pipleine **/
     agent any
-    stages {
-        stage('Build' {
+    stages{
+        stage('Build'){
             steps {
                 sh 'mvn clean package'
             }
@@ -12,7 +12,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
-        })
+        }
     }
 
 }
